@@ -1,0 +1,14 @@
+## MAC OS
+.DS_Store
+
+coverage
+rdoc
+pkg
+.yardoc
+Gemfile.lock
+
+.bundle
+
+
+/*.rb
+/*.gem
