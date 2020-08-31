@@ -2,7 +2,9 @@
 
 This Gem provides a Ruby interface to [Pcloud.com](https://pcloud.com).
 
-[![Build Status](https://github.com/7urkm3n/pcloud/workflows/build/badge.svg?branch=master)]() [![Gem Version](https://badge.fury.io/rb/pcloud.svg)](https://rubygems.org/gems/pcloud)
+[![Build Status](https://github.com/7urkm3n/pcloud/workflows/build/badge.svg?branch=master)](https://github.com/7urkm3n/pcloud/actions?query=workflow%3Abuild) [![Gem Downloads](https://badgen.net/rubygems/dt/pcloud)](https://rubygems.org/gems/pcloud) [![Gem Version](https://badge.fury.io/rb/pcloud.svg)](https://badge.fury.io/rb/pcloud)
+
+<!-- [![Gem Version](https://badgen.net/rubygems/v/pcloud)](https://rubygems.org/gems/pcloud) -->
 
 ## Installation and Configuration
 
@@ -64,18 +66,18 @@ Pcloud.logger = Rails.logger
 
 Currently, only available custom Get method. 
 
-File upload and Download methods are coming soon.
+File Upload and Download methods are coming soon.
 
 
 #### Get methods
 
 ``` ruby
-pcloud.get("getip")
-pcloud.get("getdigest")
+Pcloud.get("getip")
+Pcloud.get("getdigest")
 
 # with params
-pcloud.get("listfolder", folderid: 0)
-pcloud.get("createfolder", folderid: 0, name: "new folder name")
+Pcloud.get("listfolder", folderid: 0)
+Pcloud.get("createfolder", folderid: 0, name: "new folder name", ...)
 ```
 
 <!-- #### Post methods
@@ -86,4 +88,4 @@ pcloud.get("createfolder", folderid: 0, name: "new folder name")
 ``` -->
 
 ### Supported Ruby versions
-2.0+
+2.2+

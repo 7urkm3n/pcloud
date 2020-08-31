@@ -6,7 +6,7 @@ module Pcloud
   class Client
     attr_writer :username, :password
 
-    def initialize(options)
+    def initialize(options = {})
       @username, @password = options.values_at(:username, :password)
     end
 
@@ -29,15 +29,11 @@ module Pcloud
         raise ConfigurationError, :username unless @username
         raise ConfigurationError, :password unless @password
         digest = JSON.parse(RestClient.get("#{BASE_URL}/getdigest"))['digest']
-        passworddigest = Digest::SHA1.hexdigest( @password + Digest::SHA1.hexdigest( @username.downcase ) + digest)
-        params = {params: 
-          {
-            username: @username, 
-            digest: digest,
-            passworddigest: passworddigest
-          }
-        }
-        JSON.parse(RestClient.get("#{BASE_URL}/userinfo?getauth=1&logout=1", params))['auth']
+        passworddigest = digest_data(@password + digest_data( @username.downcase ) + digest)
+        JSON.parse(
+          RestClient.get("#{BASE_URL}/userinfo?getauth=1&logout=1", 
+          {params: {username: @username, digest: digest, passworddigest: passworddigest}})
+        )['auth']
       end
     end
 
@@ -47,5 +43,8 @@ module Pcloud
       Resource.new(self, path)
     end
 
+    def digest_data text
+      Digest::SHA1.hexdigest(text)
+    end
   end
 end

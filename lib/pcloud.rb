@@ -11,7 +11,7 @@ module Pcloud
   class << self
     extend Forwardable
     def_delegators :default_client, :username=, :password=
-    def_delegators :default_client, :get, :post
+    def_delegators :default_client, :get
 
     attr_writer :logger
 
@@ -28,9 +28,5 @@ module Pcloud
         Pcloud::Client.new
       end
     end
-
   end
 end
-
-
-
