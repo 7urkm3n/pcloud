@@ -1,44 +1,42 @@
 module Pcloud
   class Request
-    def initialize(client, verb, path, params)
-      @client, @verb , @path, @params = client, verb, path, params
+    def initialize(client, verb, path, params, payload)
+      @client, @verb, @path, @params, @payload = client, verb, path, params, payload
     end
 
     def call
       params = {params: {}}
       params[:params].merge!(@params, {auth: @client.auth})
-
       http = @client.http_client
       res = case @verb
             when :get
-              http[@path].get( params )
+              begin
+                http[@path].get(params)
+              rescue => e
+                handle_response(e.http_code, e.message)
+              end
             when :post
-              http[@path].post( params )
+              begin
+                http[@path].post(@payload, params)
+              rescue => e
+                handle_response(e.http_code, e.message)
+              end
             else
-              raise "Unsupported verb"
+              raise "Unsupported verb: #{@verb}"
             end
-      body = res.body ? res.body.chomp : nil
-      handle_response(res.code.to_i, body)
+      JSON.parse(res.body, { symbolize_names: true })
     end
-  
+
     private
 
     def handle_response(status_code, body)
       case status_code
-      when 200
-        return JSON.parse(body, { symbolize_names: true })
-      when 202
-        return body.empty? ? true : JSON.parse(body, { symbolize_names: true })
       when 400
-        raise Error, "Bad request: #{body}"
+        raise HTTPError.new(:HTTPError, body)
       when 401
         raise AuthenticationError, body
       when 404
-        raise Error, "404 Not found (#{@uri})"
-      when 407
-        raise Error, "Proxy Authentication Required"
-      when 413
-        raise Error, "Payload Too Large > 10KB"
+        raise HTTPError.new(:HTTPError, body)
       else
         raise Error, "Unknown error (status code #{status_code}): #{body}"
       end
