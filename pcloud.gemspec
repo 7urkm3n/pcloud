@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
 
   s.metadata = {
     "bug_tracker_uri"   => "https://github.com/7urkm3n/pcloud/issues",
-    "changelog_uri"     => "https://github.com/7urkm3n/pcloud/blob/v#{s.version}/Changelog.md",
+    "changelog_uri"     => "https://github.com/7urkm3n/pcloud/blob/master/Changelog.md",
     "documentation_uri" => "https://github.com/7urkm3n/pcloud",
     "source_code_uri"   => "https://github.com/7urkm3n/pcloud",
   }

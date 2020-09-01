@@ -1,9 +1,6 @@
 autoload 'Logger', 'logger'
 require 'forwardable'
 require 'pcloud/client'
-require 'pcloud/version'
-require 'pcloud/request'
-require 'pcloud/resource'
 
 module Pcloud
   BASE_URL = 'https://api.pcloud.com'.freeze
@@ -30,3 +27,8 @@ module Pcloud
     end
   end
 end
+
+require 'pcloud/version'
+require 'pcloud/request'
+require 'pcloud/resource'
+require 'pcloud/exceptions'

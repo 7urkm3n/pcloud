@@ -1,7 +1,9 @@
+require "#{Dir.pwd}/lib/pcloud/files/file_handler"
+
 module Pcloud
   class Resource
 
-    def initialize(client, path)
+    def initialize(client, path = "")
       @client, @path = client, path
     end
 
@@ -9,14 +11,18 @@ module Pcloud
       create_request(:get, params).call
     end
 
-    def post(params)
-      create_request(:post, params).call
+    def post(params, payload = {})
+      create_request(:post, params, payload).call
+    end
+
+    def file
+      FileHandler.new(@client)
     end
     
     private
 
-    def create_request(verb, params)
-      Request.new(@client, verb, @path, params)
+    def create_request(verb, params, payload = {})
+      Request.new(@client, verb, @path, params, payload)
     end
 
   end

@@ -1,6 +1,8 @@
 require 'json'
 require 'rest-client'
-require 'pcloud/exceptions'
+# require 'file/file'
+# require "#{Dir.pwd}/lib/pcloud/files/file_handler"
+
 
 module Pcloud
   class Client
@@ -17,7 +19,11 @@ module Pcloud
     def post(path, params = {})
       resource(path).post(params)
     end
-    
+
+    def file
+      Resource.new(self).file()
+    end
+
     def http_client
       @client ||= begin
         RestClient::Resource.new(BASE_URL)

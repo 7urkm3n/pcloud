@@ -1,6 +1,6 @@
 # Gem for Pcloud cloud storage
 
-This Gem provides a Ruby interface to [Pcloud.com](https://pcloud.com).
+This Gem provides a Ruby interface to [Pcloud.com](https://docs.pcloud.com).
 
 [![Build Status](https://github.com/7urkm3n/pcloud/workflows/build/badge.svg?branch=master)](https://github.com/7urkm3n/pcloud/actions?query=workflow%3Abuild) [![Gem Downloads](https://badgen.net/rubygems/dt/pcloud)](https://rubygems.org/gems/pcloud) [![Gem Version](https://badge.fury.io/rb/pcloud.svg)](https://badge.fury.io/rb/pcloud)
 
@@ -54,13 +54,13 @@ Pcloud.username = 'email'
 Pcloud.password = 'password'
 ```
 
-### Logging
+<!-- ### Logging
 
 By default errors are logged in STDOUT level, also `Rails.logger` available.
 
 ``` ruby
 Pcloud.logger = Rails.logger
-```
+``` -->
 
 ## Working with methods
 
