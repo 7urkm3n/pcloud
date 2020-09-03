@@ -8,7 +8,8 @@ module Pcloud
   class << self
     extend Forwardable
     def_delegators :default_client, :username=, :password=
-    def_delegators :default_client, :get
+    def_delegators :default_client, :get, :post
+    def_delegators :default_client, :file
 
     attr_writer :logger
 

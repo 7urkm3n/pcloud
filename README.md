@@ -106,7 +106,7 @@ Pcloud.file.download(
 
 ``` ruby
 # still in BETA! -  
-# only supports single file download
+# only supports single file upload
 
 file = File.open("/Users/7urkm3n/Downloads/anything.file")
 params = {

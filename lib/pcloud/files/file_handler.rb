@@ -20,7 +20,7 @@ module Pcloud
       
       filename = params[:filename] ? params[:filename] : url.split("/").last
       File.open("#{params[:destination]}/#{filename}", 'wb' ) do |f|
-        f.write 
+        f.write res
       end
       res.code
     end
