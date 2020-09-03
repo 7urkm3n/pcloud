@@ -1,8 +1,5 @@
 require 'json'
 require 'rest-client'
-# require 'file/file'
-# require "#{Dir.pwd}/lib/pcloud/files/file_handler"
-
 
 module Pcloud
   class Client
@@ -25,9 +22,7 @@ module Pcloud
     end
 
     def http_client
-      @client ||= begin
-        RestClient::Resource.new(BASE_URL)
-      end
+      @client ||= RestClient::Resource.new(BASE_URL)
     end
 
     def auth

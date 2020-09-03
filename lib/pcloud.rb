@@ -21,9 +21,7 @@ module Pcloud
     end
 
     def default_client
-      @default_client ||= begin
-        Pcloud::Client.new
-      end
+      @default_client ||= Pcloud::Client.new
     end
   end
 end

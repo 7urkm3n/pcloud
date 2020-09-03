@@ -1,5 +1,12 @@
 ### Changelogs:
 
+#### v0.0.4
+##### Updates
+* Minor changes
+* Upload and Download added and avilable now
+* Post method is avilable now.
+* Upload/Download async version is on work.
+
 #### v0.0.3
 ##### Updates
 * Minor updates

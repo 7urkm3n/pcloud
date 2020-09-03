@@ -77,15 +77,45 @@ Pcloud.get("getdigest")
 
 # with params
 Pcloud.get("listfolder", folderid: 0)
-Pcloud.get("createfolder", folderid: 0, name: "new folder name", ...)
 ```
+<!-- Pcloud.get("createfolder", folderid: 0, name: "new folder name", ...) -->
 
-<!-- #### Post methods
+#### Post methods
 
 ``` ruby
+# if any of pcloud endpoints requires payload on POST request, please create an issue.
+
 # with params
-pcloud.get("createfolder", folderid: 0, name: "new folder name")
-``` -->
+Pcloud.post("createfolder", folderid: 0, name: "new folder name")
+```
+
+#### [Files](https://docs.pcloud.com/methods/file/)
+##### [Download File](https://docs.pcloud.com/methods/file/downloadfile.html)
+
+``` ruby
+#obtain filelink from: https://docs.pcloud.com/methods/streaming/getfilelink.html
+
+Pcloud.file.download(
+  url: filelink,                           #required
+  destination: "#{Dir.pwd}/Downloads",     #required
+  filename: "hehe.txt"                     #optional
+)
+```
+
+##### [Upload File](https://docs.pcloud.com/methods/file/uploadfile.html)
+
+``` ruby
+# still in BETA! -  
+# only supports single file download
+
+file = File.open("/Users/7urkm3n/Downloads/anything.file")
+params = {
+  folderid: 0,                #required
+  filename: "anything.txt"    #required
+}
+payload = {file: file}
+Pcloud.file.upload(params, payload)
+```
 
 ### Supported Ruby versions
 2.2+
