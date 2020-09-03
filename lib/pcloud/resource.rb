@@ -16,7 +16,7 @@ module Pcloud
     end
 
     def file
-      FileHandler.new(@client)
+      @file ||= FileHandler.new(@client)
     end
     
     private

@@ -1,6 +1,4 @@
-# require File.dirname(__FILE__) + '/upload'
-# puts "#{Dir.pwd}/lib/pcloud/request"
-# require "#{Dir.pwd}/lib/pcloud/request"
+require 'RestClient'
 
 module Pcloud
   class FileHandler
@@ -13,17 +11,18 @@ module Pcloud
     end
 
     def download(params)
-      # create_request(:get, 'downloadfile', params).call
       url = params[:url]
+      begin
+        res = RestClient.get(url)
+      rescue => e
+        raise HTTPError.new(:HTTPError, e.message)
+      end
+      
       filename = params[:filename] ? params[:filename] : url.split("/").last
-      File.open("#{params[:destination]}/#{filename}", 'wb') {|f|
-        block = proc { |response|
-          response.read_body do |chunk|
-            f.write chunk
-          end
-        }
-        RestClient::Request.execute(method: :get,url: url,block_response: block)
-      }
+      File.open("#{params[:destination]}/#{filename}", 'wb' ) do |f|
+        f.write 
+      end
+      res.code
     end
 
     private
