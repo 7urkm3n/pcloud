@@ -1,4 +1,4 @@
-require "#{Dir.pwd}/lib/pcloud/files/file_handler"
+require "pcloud/files/file_handler"
 
 module Pcloud
   class Resource
