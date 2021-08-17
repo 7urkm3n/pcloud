@@ -1,4 +1,4 @@
-require 'RestClient'
+require 'rest-client'
 
 module Pcloud
   class FileHandler
