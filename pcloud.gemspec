@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description           = %q{Pcloud is cloud storage upload/download/share from pcloud.com. Please, check available methods in Github Doc...}
   s.license              = "MIT"
 
-  s.files                 = Dir["{lib}/**/*.rb", "LICENSE", "README.md", "Changelog.md"]
+  s.files                 = Dir["{lib}/**/*.rb", "LICENSE", "README.md", "CHANGELOG.md"]
   s.require_paths         = ["lib".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.2".freeze)
 
@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
 
   s.metadata = {
     "bug_tracker_uri"   => "#{s.homepage.to_s}/issues",
-    "changelog_uri"     => "#{s.homepage.to_s}/blob/master/Changelog.md",
+    "changelog_uri"     => "#{s.homepage.to_s}/blob/master/CHANGELOG.md",
     "documentation_uri" => s.homepage.to_s,
     "source_code_uri"   => s.homepage.to_s,
   }
