@@ -6,14 +6,14 @@ on:
       - main
 
 jobs:
-  release-please:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: GoogleCloudPlatform/release-please-action@v2
         id: release
         with:
           release-type: ruby
-          package-name: release-please-demo
+          package-name: pcloud
           bump-minor-pre-major: true
           version-file: 'lib/pcloud/version.rb'
       # Checkout code if release was created
