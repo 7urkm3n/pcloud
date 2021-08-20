@@ -8,11 +8,11 @@ module Pcloud
     end
 
     def get(params)
-      create_request(:get, params).call
+      @get ||= create_request(:get, params).call
     end
 
-    def post(params, payload = {})
-      create_request(:post, params, payload).call
+    def post(params)
+      @post ||= create_request(:post, params).call
     end
 
     def file

@@ -3,6 +3,7 @@ require 'rest-client'
 module Pcloud
   class FileHandler
     def initialize(client)
+      puts "FileHandler initialize!!!"
       @client = client
     end
 

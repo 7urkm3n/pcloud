@@ -3,7 +3,6 @@ require 'rest-client'
 
 module Pcloud
   class Client
-    include Request
     attr_writer :username, :password
 
     def initialize(options = {})
@@ -11,15 +10,15 @@ module Pcloud
     end
 
     def get(path, params = {})
-      request(:get, path, params)
+      resource(path).get(params)
     end
 
     def post(path, params = {})
-      request(:post, path, params)
+      resource(path).post(params)
     end
 
     def file
-      # Resource.new(self).file()
+      Resource.new(self).file()
     end
 
     def http_client
@@ -41,8 +40,8 @@ module Pcloud
 
     private
 
-    def request(verb, path, params, payload = {})
-      Sample::Request.call(self, verb, path, params, payload)
+    def resource(path)
+      Resource.new(self, path)
     end
 
     def digest_data text

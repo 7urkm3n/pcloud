@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rest-client", "~> 2.0"
   s.add_dependency "json", "~> 2.2.0"
-  s.add_dependency "forwardable", "~> 1.2.0"
+  s.add_dependency "forwardable", "~> 1.3.2"
 
   # s.add_development_dependency "rspec", "~> 3.0"
   # s.add_development_dependency "rake", "~> 10.4.2"

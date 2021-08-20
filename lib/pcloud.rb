@@ -7,9 +7,9 @@ module Pcloud
 
   class << self
     extend Forwardable
-    def_delegators :default_client, :username=, :password=
-    def_delegators :default_client, :get, :post
-    def_delegators :default_client, :file
+    def_delegators :client, :username=, :password=
+    def_delegators :client, :get, :post
+    def_delegators :client, :file
 
     attr_writer :logger
 
@@ -21,13 +21,17 @@ module Pcloud
       end
     end
 
-    def default_client
-      @default_client ||= Pcloud::Client.new
+    # client only works under one client 
+    def client
+      @client ||= Pcloud::Client.new
     end
+
+    # TODO: for multiple clients has to be done here!
+
   end
 end
 
 require 'pcloud/version'
 require 'pcloud/request'
-require 'pcloud/resource'
 require 'pcloud/exceptions'
+require "pcloud/files/file_handler"
