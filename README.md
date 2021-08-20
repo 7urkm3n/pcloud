@@ -62,13 +62,11 @@ By default errors are logged in STDOUT level, also `Rails.logger` available.
 Pcloud.logger = Rails.logger
 ``` -->
 
-## Working with methods
+### Working with methods
 
-Currently, only available custom Get method.
+Currently, only available custom <b> Get </b> and <b> Post</b> methods.
 
-File Upload and Download methods are coming soon.
-
-#### Get methods
+#### Get method
 
 ```ruby
 Pcloud.get("getip")
@@ -80,7 +78,7 @@ Pcloud.get("listfolder", folderid: 0)
 
 <!-- Pcloud.get("createfolder", folderid: 0, name: "new folder name", ...) -->
 
-#### Post methods
+#### Post method
 
 ```ruby
 # if any of pcloud endpoints requires payload on POST request, please create an issue.
@@ -89,12 +87,14 @@ Pcloud.get("listfolder", folderid: 0)
 Pcloud.post("createfolder", folderid: 0, name: "new folder name")
 ```
 
-#### [Files](https://docs.pcloud.com/methods/file/)
+#### [File methods](https://docs.pcloud.com/methods/file/)
 
 ##### [Download File](https://docs.pcloud.com/methods/file/downloadfile.html)
 
 ```ruby
-#obtain filelink from: https://docs.pcloud.com/methods/streaming/getfilelink.html
+# obtain filelink from: https://docs.pcloud.com/methods/streaming/getfilelink.html
+
+filelink = Pcloud.get("getfilelink", fileid: 12345, path: "...")
 
 Pcloud.file.download(
   url: filelink,                           #required
