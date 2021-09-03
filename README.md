@@ -94,7 +94,8 @@ Pcloud.post("createfolder", folderid: 0, name: "new folder name")
 ```ruby
 # obtain filelink from: https://docs.pcloud.com/methods/streaming/getfilelink.html
 
-filelink = Pcloud.get("getfilelink", fileid: 12345, path: "...")
+# fileid:0 is root
+# filelink = Pcloud.get("getfilelink", fileid: 0, path: "/")
 
 Pcloud.file.download(
   url: filelink,                           #required

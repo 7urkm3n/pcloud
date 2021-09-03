@@ -1,8 +1,8 @@
 module Pcloud
   module Request
     class << self
-      def call(client, verb, path, params, payload)
-        params = {params: {}.merge!(params, {auth: client.auth})}
+      def call(client, verb, path, params, payload={})
+        params = {params: {}.merge!(params, {auth: client.auth_token})}
         http = client.http_client
         res = case verb
               when :get
@@ -18,8 +18,9 @@ module Pcloud
                   handle_response(e.http_code, e.message)
                 end
               else
-                raise "Unsupported verb: #{verb}"
+                raise "Unsupported verb (get and post available): #{verb}"
               end
+        return res.body if params[:params][:raw]
         JSON.parse(res.body, { symbolize_names: true })
       end
 
