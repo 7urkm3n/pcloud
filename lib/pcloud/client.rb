@@ -30,9 +30,8 @@ module Pcloud
     end
 
     def authenticate(options = {})
-      res = authorize(options)
-      @auth_token = res['auth']
-      res
+      @auth_token = authorize(options)['auth']
+      self
     end
 
   private
