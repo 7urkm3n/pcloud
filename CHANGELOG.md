@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.1](https://www.github.com/7urkm3n/pcloud/compare/v0.3.0...v0.3.1) (2021-09-04)
+
+
+### Bug Fixes
+
+* version update ([9bf5268](https://www.github.com/7urkm3n/pcloud/commit/9bf52681a94e6b17ec721778bfaeee39c1750a36))
+
 ## [0.3.0](https://www.github.com/7urkm3n/pcloud/compare/v0.2.0...v0.3.0) (2021-09-04)
 
 
