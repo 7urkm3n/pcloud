@@ -44,7 +44,7 @@ require 'pcloud'
 pcloud = Pcloud::Client.new(
   username: 'email',
   password: 'password',
-).authenticate #authenticate returns auth object
+).authenticate
 
 pcloud.get("listfolder", folderid: 0)
 ```
@@ -56,7 +56,7 @@ The library can also be configured globally on the `Pcloud` class.
 ```ruby
 Pcloud.username = 'email'
 Pcloud.password = 'password'
-Pcloud.authenticate #authenticate returns auth object
+Pcloud.authenticate
 
 Pcloud.get("listfolder", folderid: 0)
 ```
@@ -80,7 +80,7 @@ Available methods:
 ###### addition!
 
 > Some apis need to be `raw` format, just add `raw` in params. `params: {fileid: ..987, raw: true}`
-> For example `gettextfile` > https://docs.pcloud.com/methods/streaming/gettextfile.html
+> For example `gettextfile` https://docs.pcloud.com/methods/streaming/gettextfile.html
 
 #### Get method
 
