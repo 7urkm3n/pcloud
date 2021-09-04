@@ -7,12 +7,14 @@ module Pcloud
 
   class << self
     extend Forwardable
-    def_delegators :client, :auth_token, :auth_token=
-    # def_delegators :client, :username=, :password=
-    def_delegators :client, :get, :post
-    def_delegators :client, :file
+    def_delegators :client, :auth_token=, :username=, :password=
+    def_delegators :client, :get, :post, :file, :authenticate
 
     attr_writer :logger
+
+    def client
+      @client ||= Pcloud::Client.new
+    end
 
     def logger
       @logger ||= begin
@@ -22,30 +24,6 @@ module Pcloud
       end
     end
 
-    def authenticate
-      @authenticate ||= begin
-        raise ConfigurationError, :username unless @username
-        raise ConfigurationError, :password unless @password
-        digest = JSON.parse(RestClient.get("#{BASE_URL}/getdigest"))['digest']
-        passworddigest = digest_data(@password + digest_data( @username.downcase ) + digest)
-        JSON.parse(
-          RestClient.get("#{BASE_URL}/userinfo", {params: {
-            username: @username, 
-            digest: digest, 
-            passworddigest: passworddigest,
-            device: "pcloud-ruby",
-            getauth: 1
-            }})
-        )['auth']
-      end
-    end
-
-    # client only works under one client 
-    def client
-      @client ||= Pcloud::Client.new
-    end
-
-    # TODO: for multiple clients has to be done here!
   end
 end
 

@@ -42,7 +42,7 @@ module Pcloud
       File.new("#{destination}/#{folder_name}","wb").write(stringio.sysread) #write buffer to zipfile
     end
 
-    private
+  private
 
     def request(verb, path, params, payload = {})
       Pcloud::Request.call(@client, verb, path, params, payload)

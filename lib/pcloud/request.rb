@@ -24,7 +24,7 @@ module Pcloud
         JSON.parse(res.body, { symbolize_names: true })
       end
 
-      private
+    private
 
       def handle_response(status_code, body)
         case status_code
