@@ -1,17 +1,20 @@
 autoload 'Logger', 'logger'
 require 'forwardable'
-require 'pcloud/client'
+require_relative 'pcloud/client'
 
 module Pcloud
   BASE_URL = 'https://api.pcloud.com'.freeze
 
   class << self
     extend Forwardable
-    def_delegators :default_client, :username=, :password=
-    def_delegators :default_client, :get, :post
-    def_delegators :default_client, :file
+    def_delegators :client, :auth_token=, :username=, :password=
+    def_delegators :client, :get, :post, :file, :authenticate
 
     attr_writer :logger
+
+    def client
+      @client ||= Pcloud::Client.new
+    end
 
     def logger
       @logger ||= begin
@@ -21,13 +24,8 @@ module Pcloud
       end
     end
 
-    def default_client
-      @default_client ||= Pcloud::Client.new
-    end
   end
 end
 
-require 'pcloud/version'
-require 'pcloud/request'
-require 'pcloud/resource'
-require 'pcloud/exceptions'
+require_relative './pcloud/version'
+require_relative './pcloud/exceptions'
