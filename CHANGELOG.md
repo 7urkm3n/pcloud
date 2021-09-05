@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.2](https://www.github.com/7urkm3n/pcloud/compare/v0.3.1...v0.3.2) (2021-09-05)
+
+
+### Bug Fixes
+
+* filehandle error fixed ([45fae7c](https://www.github.com/7urkm3n/pcloud/commit/45fae7c42fd483b86d42c80fd9e6a11619933a40))
+
 ### [0.3.1](https://www.github.com/7urkm3n/pcloud/compare/v0.3.0...v0.3.1) (2021-09-04)
 
 
