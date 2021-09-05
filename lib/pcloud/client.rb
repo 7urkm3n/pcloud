@@ -34,12 +34,11 @@ module Pcloud
       self
     end
 
-  private
-
     def request(verb, path, params, payload = {})
       Pcloud::Request.call(self, verb, path, params, payload)
     end
-
+    
+  private
     def authorize(options)
       raise ConfigurationError, :username unless @username
       raise ConfigurationError, :password unless @password
