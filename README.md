@@ -6,7 +6,7 @@ This Gem provides a Ruby interface to [Pcloud.com](https://docs.pcloud.com).
 
 <!-- [![Gem Version](https://badgen.net/rubygems/v/pcloud)](https://rubygems.org/gems/pcloud) -->
 
-##### Want to contribute? [Doc Link](https://github.com/7urkm3n/pcloud/CONTRIBUTE.md)
+##### Want to contribute? [Doc Link](CONTRIBUTE.md)
 
 ## Installation and Configuration
 
