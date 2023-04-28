@@ -15,10 +15,10 @@ Gem::Specification.new do |s|
 
   s.files                 = Dir["{lib}/**/*.rb", "LICENSE", "README.md", "CHANGELOG.md"]
   s.require_paths         = ["lib".freeze]
-  s.required_ruby_version = Gem::Requirement.new(">= 2.2".freeze)
+  s.required_ruby_version = Gem::Requirement.new(">= 2.3".freeze)
 
   s.add_dependency "rest-client", "~> 2.0"
-  s.add_dependency "json", "~> 2.2.0"
+  s.add_dependency "json", "~> 2.6", ">= 2.6.3"
   s.add_dependency "forwardable", "~> 1.3.2"
 
   # s.add_development_dependency "rspec", "~> 3.0"
