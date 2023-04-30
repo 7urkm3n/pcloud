@@ -5,8 +5,7 @@
 
 ### Bug Fixes
 
-* json 2.2.0 was giving an issue for Ruby 3.
-* wrong number of arguments (given 2, expected 1) (ArgumentError)
+* json 2.2.0 was giving an issue for Ruby 3. <wrong number of arguments (given 2, expected 1) (ArgumentError)>
 * and Ruby min req. chnaged to 2.3 and Forwardable version 1.3.3
 
 ### [0.3.2](https://www.github.com/7urkm3n/pcloud/compare/v0.3.1...v0.3.2) (2021-09-05)
