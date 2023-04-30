@@ -1,8 +1,5 @@
 # Changelog
 
-## [1.0.0](https://github.com/7urkm3n/pcloud/compare/v0.3.2...v1.0.0) (2023-04-30)
-
-
 ### ⚠ BREAKING CHANGES
 
 * github release action
