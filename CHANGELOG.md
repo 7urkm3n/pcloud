@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/7urkm3n/pcloud/compare/v0.3.2...v1.0.0) (2023-04-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* github release action
+
+### Bug Fixes
+
+* github release action ([95f59d6](https://github.com/7urkm3n/pcloud/commit/95f59d660ca20ea045bea8b47f25c7e79e6b6cfe))
+
 ### [0.3.3](https://www.github.com/7urkm3n/pcloud/compare/v0.3.2...v0.3.3) (2023-04-28)
 
 
