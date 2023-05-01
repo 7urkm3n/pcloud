@@ -143,4 +143,4 @@ Pcloud.file.upload(params, payload)
 
 ### Supported Ruby versions
 
-2.2+
+2.3+
