@@ -23,7 +23,7 @@ jobs:
       - name: Set Up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: none
+          ruby-version: 3.0.0
           bundler-cache: true
         if: ${{ steps.release.outputs.release_created }}
       - name: Bundle Install
