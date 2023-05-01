@@ -9,6 +9,7 @@ This Gem provides a Ruby interface to [Pcloud.com](https://docs.pcloud.com).
 ##### Want to contribute? [Doc Link](CONTRIBUTE.md)
 
 ## Installation and Configuration
+<font size=3>Supported Ruby versions: <b>2.3+</b> </font>
 
 Add `pcloud` to your Gemfile, and then run `bundle install`
 
@@ -141,6 +142,5 @@ payload = { files: [file1,file2,file3] }
 Pcloud.file.upload(params, payload)
 ```
 
-### Supported Ruby versions
-
-2.3+
+## License
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
