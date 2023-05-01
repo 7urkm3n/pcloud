@@ -8,6 +8,14 @@
 
 * github release action ([95f59d6](https://github.com/7urkm3n/pcloud/commit/95f59d660ca20ea045bea8b47f25c7e79e6b6cfe))
 
+## [0.3.4](https://github.com/7urkm3n/pcloud/compare/v0.3.3...v0.3.4) (2023-05-01)
+
+
+### Bug Fixes
+
+* release github test ([51ac204](https://github.com/7urkm3n/pcloud/commit/51ac2042e4bab63d2ecf86c801da42da980022a5))
+* release test\ ([f1b3a22](https://github.com/7urkm3n/pcloud/commit/f1b3a220732a9d9f6a7772dd33b315602c56934b))
+
 ### [0.3.3](https://www.github.com/7urkm3n/pcloud/compare/v0.3.2...v0.3.3) (2023-04-28)
 
 
