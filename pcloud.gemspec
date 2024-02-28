@@ -17,9 +17,10 @@ Gem::Specification.new do |s|
   s.require_paths         = ["lib".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.3".freeze)
 
-  s.add_dependency "rest-client", "~> 2.0"
-  s.add_dependency "json", "~> 2.6", ">= 2.6.3"
   s.add_dependency "forwardable", "~> 1.3.3"
+  s.add_dependency "json", "~> 2.6", ">= 2.6.3"
+  s.add_dependency "rest-client", "~> 2.0"
+  s.add_dependency "rubyzip", "~> 2.3"
 
   # s.add_development_dependency "rspec", "~> 3.0"
   # s.add_development_dependency "rake", "~> 10.4.2"
