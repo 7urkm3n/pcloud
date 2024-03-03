@@ -50,6 +50,25 @@ pcloud = Pcloud::Client.new(
 pcloud.get("listfolder", folderid: 0)
 ```
 
+Note that, [as per official API docs](https://docs.pcloud.com/):
+
+>pCloud has two data centers. One in United States and one in Europe.
+>As a consequence API calls have to be made to the correct API host name depending were the user has been registered – api.pcloud.com for United States and eapi.pcloud.com for Europe.
+
+The default region used is `https://api.pcloud.com` (US). To use a different region, specify a different `base_url` parameter (EU region: `https://eapi.pcloud.com`) when instantiating a client, e.g.:
+
+```ruby
+require 'pcloud'
+
+pcloud = Pcloud::Client.new(
+  username: 'email',
+  password: 'password',
+  base_url: "https://eapi.pcloud.com",
+).authenticate
+
+pcloud.get("listfolder", folderid: 0)
+```
+
 ### Global configuration
 
 The library can also be configured globally on the `Pcloud` class.
